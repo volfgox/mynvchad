@@ -31,5 +31,10 @@ return {
     "sphamba/smear-cursor.nvim",
     lazy = false,
     opts = require "configs.smearcursor"
+  },
+
+  {
+      "OXY2DEV/markview.nvim",
+      lazy = false,
   }
 }
