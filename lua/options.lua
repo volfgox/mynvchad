@@ -13,3 +13,4 @@ opt.foldenable = true
 opt.foldmethod = 'expr'
 opt.foldexpr = 'nvim_treesitter#foldexpr()'
 opt.indentexpr = 'nvim_treesitter#indent()'
+opt.scrolloff = 10
