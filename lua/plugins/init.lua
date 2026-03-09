@@ -1,7 +1,7 @@
 return {
   {
     "stevearc/conform.nvim",
-    event = 'BufWritePre', -- uncomment for format on save
+    event = "BufWritePre",
     opts = require "configs.conform",
   },
 
@@ -12,29 +12,15 @@ return {
     end,
   },
 
-  -- test new blink
-  -- { import = "nvchad.blink.lazyspec" },
-
-  -- {
-  -- 	"nvim-treesitter/nvim-treesitter",
-  -- 	opts = {
-  -- 		ensure_installed = {
-  -- 			"vim", "lua", "vimdoc",
-  --      "html", "css"
-  -- 		},
-  -- 	},
-  -- },
-  --
-  -- Add blink
   {
     "sphamba/smear-cursor.nvim",
     lazy = false,
-    opts = require "configs.smearcursor"
+    opts = require "configs.smearcursor",
   },
 
   {
-      "OXY2DEV/markview.nvim",
-      lazy = false,
+    "OXY2DEV/markview.nvim",
+    lazy = false,
   },
 
   {
