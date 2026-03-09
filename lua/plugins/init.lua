@@ -46,14 +46,30 @@ return {
       "mfussenegger/nvim-dap",
       "nvim-neotest/nvim-nio",
     },
+    config = function()
+      require "configs.nvim-dap-ui"
+    end,
   },
 
   {
     "mfussenegger/nvim-dap-python",
-    dependencies = { "mfussenegger/nvim-dap" },
+    ft = { "python" },
+    dependencies = {
+      "mfussenegger/nvim-dap",
+      "rcarriga/nvim-dap-ui",
+    },
+    config = function(_, _)
+      require("dap-python").setup "python"
+    end,
   },
 
   {
     "theHamsta/nvim-dap-virtual-text",
+    dependencies = {
+      "mfussenegger/nvim-dap",
+    },
+    opts = function()
+      return require "configs.nvim-dap-virtual-text"
+    end,
   },
 }

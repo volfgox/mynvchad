@@ -16,6 +16,7 @@ local servers = {
   "cssls",
   "pyright",
   "ruff",
+  "debugpy",
 }
 
 vim.lsp.config("pyright", {
