@@ -59,7 +59,7 @@ return {
       "rcarriga/nvim-dap-ui",
     },
     config = function(_, _)
-      require("dap-python").setup "python"
+      require("dap-python").setup(vim.fn.exepath "python")
     end,
   },
 
