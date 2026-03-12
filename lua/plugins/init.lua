@@ -1,7 +1,7 @@
 return {
   {
     "stevearc/conform.nvim",
-    event = 'BufWritePre', -- uncomment for format on save
+    event = "BufWritePre", -- uncomment for format on save
     opts = require "configs.conform",
   },
 
@@ -13,29 +13,15 @@ return {
     end,
   },
 
-  -- test new blink
-  -- { import = "nvchad.blink.lazyspec" },
-
-  -- {
-  -- 	"nvim-treesitter/nvim-treesitter",
-  -- 	opts = {
-  -- 		ensure_installed = {
-  -- 			"vim", "lua", "vimdoc",
-  --      "html", "css"
-  -- 		},
-  -- 	},
-  -- },
-  --
-  -- Add blink
   {
     "sphamba/smear-cursor.nvim",
     lazy = false,
-    opts = require "configs.smearcursor"
+    opts = require "configs.smearcursor",
   },
 
   {
-      "OXY2DEV/markview.nvim",
-      lazy = false,
+    "OXY2DEV/markview.nvim",
+    lazy = false,
   },
 
   {
@@ -48,6 +34,66 @@ return {
     event = "User FilePost",
     opts = function()
       return require "configs.gitsigns"
+    end,
+  },
+
+  {
+    "mrcjkb/rustaceanvim",
+    version = "^8",
+    lazy = false,
+    init = function()
+      vim.g.rustaceanvim = {
+        tools = {},
+
+        server = {
+          default_settings = {
+            ["rust-analyzer"] = {
+              cargo = {
+                allFeatures = true,
+              },
+              checkOnSave = true,
+            },
+          },
+        },
+
+        dap = {
+          autoload_configurations = true,
+        },
+      }
+    end,
+  },
+
+  {
+    "rust-lang/rust.vim",
+    ft = "rust",
+    init = function()
+      vim.g.rustfmt_autosave = 1
+    end,
+  },
+
+  {
+    "mfussenegger/nvim-dap",
+    lazy = true,
+  },
+
+  {
+    "rcarriga/nvim-dap-ui",
+    ft = { "rust", "python" },
+    dependencies = {
+      "mfussenegger/nvim-dap",
+      "nvim-neotest/nvim-nio",
+    },
+    config = function()
+      require "configs.nvim-dap-ui"
+    end,
+  },
+
+  {
+    "theHamsta/nvim-dap-virtual-text",
+    ft = { "rust", "python" },
+    dependencies = { "mfussenegger/nvim-dap" },
+    opts = function()
+      return require "configs.nvim-dap-virtual-text"
     end,
   },
 }
