@@ -23,3 +23,11 @@ opt.colorcolumn = "80,100,120"
 -- })
 
 vim.o.updatetime = 250 -- need this for CursorHold autocmd in autocmds.lua
+
+-- make the inline blame text easier to read by tweaking its highlight
+-- group; you can adjust the colors to suit your colorscheme.
+vim.api.nvim_set_hl(0, "GitSignsCurrentLineBlame", {
+  fg = "#abb2bf",
+  bg = "#1e222a",
+  italic = true,
+})
