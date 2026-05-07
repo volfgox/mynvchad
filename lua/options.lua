@@ -31,3 +31,8 @@ vim.api.nvim_set_hl(0, "GitSignsCurrentLineBlame", {
   bg = "#1e222a",
   italic = true,
 })
+
+vim.api.nvim_set_hl(0, "SpellBad", {
+  undercurl = true,
+  sp = "#ff6c6b",
+})
